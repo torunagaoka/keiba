@@ -1,0 +1,25 @@
+{% from "_formhelpers.html" import render_field %}
+{% extends "base_after_login.html" %}
+{% block content %}
+<h1>検索結果</h1>
+<div class="container">
+    <table border="1">
+        <tr>
+            <th>開催日時</th>
+            <th>開催</th>
+            <th>レース数</th>
+            <th>馬名</th>
+            <th>コメント</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <th>{{ result[0] }}</th>
+            <th>{{ result[1] }}</th>
+            <th>{{ result[2] }}</th>
+            <th>{{ result[3] }}</th>
+            <th>{{ result[4] }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

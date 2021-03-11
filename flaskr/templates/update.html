@@ -1,0 +1,12 @@
+{% from "_formhelpers.html" import render_field %}
+{% extends "base_after_login.html" %}
+{% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/script_2.js') }}"></script>
+<h1>変更画面</h1>
+<form method="POST" onSubmit="return checkUpdate()">
+    {{form.csrf_token}}
+    {{render_field(form.horsename, value=horsename)}}
+    {{render_field(form.comment)}}
+    {{form.submit()}}
+</form>
+{% endblock %}
